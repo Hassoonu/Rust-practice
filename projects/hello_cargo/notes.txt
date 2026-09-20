@@ -1,0 +1,33 @@
+to create a new project:
+    cargo new [Folder name or path to new location]
+
+note: git is the common version control system cargo works with,
+    we can change this to use a different version control system or
+    no version control system with the --vcs flag. 
+    ex: cargo new --vcs, but run cargo new --help for more :)
+
+note: top-level project directory is just for README files, license information, configuration files, and anything else not related to your code. 
+
+If you started a project that doesn’t use Cargo:
+    Move the project code into the src directory and create an appropriate Cargo.toml file. 
+    One easy way to get that Cargo.toml file is to run   cargo init  , which will create it for you automatically
+
+to build (compile) project and create executable:
+    cargo build
+
+to run executable:
+    ./executable-name
+
+can combine building and running into one step:
+    cargo run
+
+faster way to check if your code compiles without making an executable or running:
+    cargo check
+
+When your project is finally ready for release, 
+    you can use cargo build --release to compile it with optimizations. 
+    This command will create an executable in target/release instead of target/debug. 
+    The optimizations make your Rust code run faster, 
+    but turning them on lengthens the time it takes for your program to compile. 
+
+    Be sure to run the release version if you're benchmarking!
