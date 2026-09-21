@@ -9,7 +9,6 @@ fn main() {
     println!("-------------");
 }
 
-
 fn mutability_err_ex() {
     // Variables and Mutability:
     println!("Mutability Error:");
@@ -33,7 +32,7 @@ fn mutability_good_ex() {
     println!("y is NOW {y} ;)");
 }
 
-fn shadowing_variables(){
+fn shadowing_variables() {
     println!("Shadowing:");
     let x = 5;
 
@@ -47,10 +46,10 @@ fn shadowing_variables(){
     println!("after scope, x is now {x}");
 
     // a use case also lets us:
-        // perform some transformations for a non-mutable variable and then keep it immutable
-        // can re-use variable names for variables of different types. Ex:
-            // let spaces = "    "; string type
-            // let spaces = spaces.len(); int type
+    // perform some transformations for a non-mutable variable and then keep it immutable
+    // can re-use variable names for variables of different types. Ex:
+    // let spaces = "    "; string type
+    // let spaces = spaces.len(); int type
 
     // how does this affect memory?
 }
