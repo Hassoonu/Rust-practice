@@ -1,6 +1,8 @@
 const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 
 fn main() {
+
+    println!("Declared a constant! {THREE_HOURS_IN_SECONDS}");
     mutability_err_ex();
     println!("-------------");
     mutability_good_ex();
