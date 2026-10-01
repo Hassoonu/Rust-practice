@@ -116,6 +116,12 @@ fn nth_fib_helper(n: u32) -> u32 {
 
 fn sing(){
     // variations:
+
+
+    // updated version is more memory efficient.
+    // String lives in heap, so each unnecessary allocation costs MEMORY
+    // this properly uses &str to point the string literals to where they're needed.
+
     const STUFF_PER_DAY: [&str; 12] = ["Partridge in a Pear Tree",
                                     "Turtle Doves",
                                     "French Hens",
@@ -158,6 +164,22 @@ fn sing(){
         println!("On the {day}{suffix} day of Christmas my true love sent to me\n{total_things}");
     }
 }
+
+/*
+way to build sing to not need ANY memory allocation.
+fn sing() {
+    for day in 1..=12usize {
+        let suffix = match day { 1 => "st", 2 => "nd", 3 => "rd", _ => "th" };
+        println!("On the {day}{suffix} day of Christmas my true love sent to me");
+        for n in (1..=day).rev() {
+            let count = if n == 1 && day > 1 { "And a" } else { sing_helper_int_to_word(n as u8) };
+            println!("{count} {}", GIFTS[n - 1]);
+        }
+        println!();
+    }
+}
+*/
+
 
 fn sing_helper_int_to_word(x: u8) -> &'static str{
     return match x {
